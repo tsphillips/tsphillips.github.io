@@ -4,6 +4,8 @@ title: About
 permalink: /about/
 ---
 
+Hi! This is a personal site for Thomas Phillips.
+
 I am a computer scientist and polymath, who, like many of my ilk, has numerous interests spanning both the creative and the technical.
 By creative, I mean implicated in the creation of novel works, some aesthetic and some not.
 By technical, I mean describing or derived from formal systems.
