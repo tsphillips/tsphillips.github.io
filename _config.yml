@@ -21,7 +21,8 @@
 title: If you're not doing it now, you're not doing it.
 email: tom@tsphillips.net
 description: >- # this means to ignore newlines until "baseurl:"
-  Your time is limited. Make the most of it while you can.
+  This is the personal web site of Thomas Phillips.
+  My opinions are my own.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
