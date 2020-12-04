@@ -15,7 +15,7 @@ I am a hacker, in almost every sense of the word, and tend to be busy with side 
 
 ## Professional
 
-I have been fortunate to have had a very diverse career, spanning decades in both technical and managerial roles.
+I have been fortunate to have had a very diverse career spanning decades, serving in both technical and managerial roles.
 My education includes doctoral studies in education, graduate studies in public administration, M.S. in computer information systems, B.A. in Psychology, and undergraduate and graduate studies in computer science.
 My professional work experience includes:
 
