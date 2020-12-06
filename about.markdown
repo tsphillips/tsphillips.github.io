@@ -28,7 +28,7 @@ My professional work experience includes:
 
 I currently work as the Chief Technical Officer at <a href="http://www.ridgebacknet.com">Ridgeback Network Defense, Inc.</a>, a cybersecurity company that focuses on deception technology and interactive defense. If you like the idea of autonomous security systems and have a knack for hacking, feel free to contact me at tom@ridgebacknet.com.
 
-LinkedIn: [](https://www.linkedin.com/in/thomas-phillips-5a25a74/)
+[LinkedIn](https://www.linkedin.com/in/thomas-phillips-5a25a74/)
 
 ## Presentations
 
