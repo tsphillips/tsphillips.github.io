@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Cybersecurity: Who is roaming the halls? | If you’re not doing it now, you’re not doing it.</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="Cybersecurity: Who is roaming the halls?" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This brief article describes how to use tcpdump to collect data for analyzing communication patterns in a computer network. Analyzing communication patterns will give you insight into how the network is being used." />
+<meta property="og:description" content="This brief article describes how to use tcpdump to collect data for analyzing communication patterns in a computer network. Analyzing communication patterns will give you insight into how the network is being used." />
+<link rel="canonical" href="http://localhost:4000/cybersecurity/networks/2021/01/08/cybersecurity-who-is-roaming-the-halls.html" />
+<meta property="og:url" content="http://localhost:4000/cybersecurity/networks/2021/01/08/cybersecurity-who-is-roaming-the-halls.html" />
+<meta property="og:site_name" content="If you’re not doing it now, you’re not doing it." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-01-08T06:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Cybersecurity: Who is roaming the halls?" />
+<script type="application/ld+json">
+{"description":"This brief article describes how to use tcpdump to collect data for analyzing communication patterns in a computer network. Analyzing communication patterns will give you insight into how the network is being used.","@type":"BlogPosting","url":"http://localhost:4000/cybersecurity/networks/2021/01/08/cybersecurity-who-is-roaming-the-halls.html","headline":"Cybersecurity: Who is roaming the halls?","dateModified":"2021-01-08T06:00:00-05:00","datePublished":"2021-01-08T06:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/cybersecurity/networks/2021/01/08/cybersecurity-who-is-roaming-the-halls.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="If you're not doing it now, you're not doing it." /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">If you&#39;re not doing it now, you&#39;re not doing it.</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Cybersecurity: Who is roaming the halls?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-01-08T06:00:00-05:00" itemprop="datePublished">Jan 8, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>This brief article describes how to use tcpdump to collect data for analyzing communication patterns in a computer network. Analyzing communication patterns will give you insight into how the network is being used.</p>
+
+<hr />
+
+<p><strong>There is always a way into your organization.</strong></p>
+
+<ul>
+  <li>There are always ways to break into an organization’s IT infrastructure. (cite solar winds and jetbrains)</li>
+</ul>
+
+<p>A common myth is that an organization can somehow protect itself from cyberattacks. It is true that you can set up defenses, and layered defenses help prevent many attacks. Unfortunately, it is also true that no matter how strong your defenses are, eventually someone will get through.</p>
+
+<p>The supply chain attack is one example of how an attacker can bypass all of your security.</p>
+
+<p><strong>Production networks are noisy.</strong></p>
+
+<ul>
+  <li>A production network is noisy. Most often the network use differs from the network design.</li>
+</ul>
+
+<p><strong>You can do analysis with a professional tool or with open source.</strong></p>
+
+<ul>
+  <li>A professional tool can help you understand the network, but you also can do analysis for free with tcpdump.</li>
+</ul>
+
+<p><strong>Capturing Network Traffic with Tcpdump</strong></p>
+
+<p><em>What follows is not meant to be an elaborate tutorial. Instead, I want to whet your appetite so you feel motivated to learn more about network analysis on your own.</em></p>
+
+<p>Assuming you want to create your own analysis solution and learn more while doing it, you can use freely available network capture tools. Some command line tools you can use include <code class="highlighter-rouge">tcpdump</code>, <code class="highlighter-rouge">windump</code>, and <code class="highlighter-rouge">tshark</code>. For this article I will use <code class="highlighter-rouge">tcpdump</code>, which is available on Linux, Mac OS, and other Unix-variant systems. The Tcpdump project is open source<a href="#1">[1]</a>, so you can even dive into the source code if you want.</p>
+
+<p>When we capture network traffic, we want to see the Ethernet addresses, the IP addresses, and the ports (if applicable). To insure the information we need is displayed in a machine-processable format, we will use the <code class="highlighter-rouge">-e</code> and <code class="highlighter-rouge">-n</code> arguments. Also, for this article we are only interested in ARP traffic. After setting the network interface to promiscuous mode (so it captures all traffic), this command works on my system:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo tcpdump -e -n arp
+</code></pre></div></div>
+<p>On my system, the command above will generate output lines that looks similar to this:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>23:17:18.347162 f8:47:2a:ad:08:19 &gt; d3:9a:c7:8b:fc:31, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at f8:47:2a:ad:08:19, length 28
+23:19:49.175519 f8:47:2a:ad:08:19 &gt; ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.23 tell 10.0.0.1, length 28
+</code></pre></div></div>
+
+<p><strong>Extracting Communication Pairs</strong></p>
+
+<p>We want to know who is talking to whom on the network. For this article we will look at link-level communications. Pairs of Ethernet addresses will give us the information we are looking for. I like Perl, so that’s what I will use in this example.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>perl -n -e 'm/([^ ]+) &gt; ([^ ]+),/ and print "$1,$2\n";'
+</code></pre></div></div>
+<p>The resulting output looks like this:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f8:47:2a:ad:08:19,d3:9a:c7:8b:fc:31
+f8:47:2a:ad:08:19,ff:ff:ff:ff:ff:ff
+</code></pre></div></div>
+
+<p>Now you have a comma separated data set that can be read into a spreadsheet.</p>
+
+<p><strong>References</strong></p>
+
+<p><a name="1">[1]</a> <a href="https://www.tcpdump.org">TCPDUMP/LIBPCAP public repository</a>.</p>
+
+  </div><a class="u-url" href="/cybersecurity/networks/2021/01/08/cybersecurity-who-is-roaming-the-halls.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">If you&#39;re not doing it now, you&#39;re not doing it.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">If you&#39;re not doing it now, you&#39;re not doing it.</li><li><a class="u-email" href="mailto:tom@tsphillips.net">tom@tsphillips.net</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This is the personal web site of Thomas S. Phillips. My opinions are my own.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
