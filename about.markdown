@@ -32,6 +32,7 @@ I currently work as the Chief Technical Officer at <a href="http://www.ridgeback
 
 ## Presentations
 
+- Phillips, Thomas. (June 2021). Threat detection in graphs: Using quantum computing to calculate vertex covers, Second Cyber Bytes Foundation Executive Briefing.
 - Phillips, Thomas. (April 2018). Machine Learning: Too smart for its own good [presentation], BSidesSF 2018. https://www.youtube.com/watch?v=Y3aG3XUH5OA
 - Phillips, Thomas. (May 2016). Network situational awareness with tcpdump [presentation], MiniCon at Unallocated Space.
 - Phillips, Thomas. (April 2016). The value of deceiving attackers [presentation], BSidesCharm 2016. https://www.youtube.com/watch?v=rNdPI9TU6wA
@@ -123,3 +124,7 @@ I currently work as the Chief Technical Officer at <a href="http://www.ridgeback
 - Milanda (role-playing game)
 - Mystic Conquest (unreleased multiplayer web-based game)
 - The Martian String (role-playing game)
+
+## Et cetera
+
+$$ e^{i\pi}+1=0 $$

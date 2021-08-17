@@ -1,4 +1,4 @@
-I"M(<p>Hi! This is a personal site for Thomas Phillips.</p>
+I".)<p>Hi! This is a personal site for Thomas Phillips.</p>
 
 <p>I am a computer scientist and polymath, who, like many of my ilk, have numerous interests spanning both the creative and the technical.
 By creative, I mean implicated in the creation of novel works, some aesthetic and some not.
@@ -29,6 +29,7 @@ My professional work experience includes:</p>
 <h2 id="presentations">Presentations</h2>
 
 <ul>
+  <li>Phillips, Thomas. (June 2021). Threat detection in graphs: Using quantum computing to calculate vertex covers, Second Cyber Bytes Foundation Executive Briefing.</li>
   <li>Phillips, Thomas. (April 2018). Machine Learning: Too smart for its own good [presentation], BSidesSF 2018. https://www.youtube.com/watch?v=Y3aG3XUH5OA</li>
   <li>Phillips, Thomas. (May 2016). Network situational awareness with tcpdump [presentation], MiniCon at Unallocated Space.</li>
   <li>Phillips, Thomas. (April 2016). The value of deceiving attackers [presentation], BSidesCharm 2016. https://www.youtube.com/watch?v=rNdPI9TU6wA</li>
@@ -133,4 +134,8 @@ My professional work experience includes:</p>
   <li>Mystic Conquest (unreleased multiplayer web-based game)</li>
   <li>The Martian String (role-playing game)</li>
 </ul>
+
+<h2 id="et-cetera">Et cetera</h2>
+
+\[e^{i\pi}+1=0\]
 :ET
