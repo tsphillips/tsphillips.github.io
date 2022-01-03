@@ -1,4 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-08-17T18:08:33-04:00</updated><id>/feed.xml</id><title type="html">If you’re not doing it now, you’re not doing it.</title><subtitle>This is the personal web site of Thomas S. Phillips. My opinions are my own.</subtitle><entry><title type="html">Cybersecurity: Who is roaming the halls?</title><link href="/cybersecurity/networks/2021/01/08/cybersecurity-who-is-roaming-the-halls.html" rel="alternate" type="text/html" title="Cybersecurity: Who is roaming the halls?" /><published>2021-01-08T06:00:00-05:00</published><updated>2021-01-08T06:00:00-05:00</updated><id>/cybersecurity/networks/2021/01/08/cybersecurity-who-is-roaming-the-halls</id><content type="html" xml:base="/cybersecurity/networks/2021/01/08/cybersecurity-who-is-roaming-the-halls.html">&lt;p&gt;This brief article describes how to use tcpdump to collect data for analyzing communication patterns in a computer network. Analyzing communication patterns will give you insight into how the network is being used.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-03T14:16:11-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">If you’re not doing it now, you’re not doing it.</title><subtitle>This is the personal web site of Thomas S. Phillips. My opinions are my own.</subtitle><entry><title type="html">Rusty Tip: A String manages its own memory, but a string slice does not.</title><link href="http://localhost:4000/rust/programming/2022/01/03/rusty-tip-a-string-manages-its-own-memory-but-a-string-slice-does-not.html" rel="alternate" type="text/html" title="Rusty Tip: A String manages its own memory, but a string slice does not." /><published>2022-01-03T12:00:00-05:00</published><updated>2022-01-03T12:00:00-05:00</updated><id>http://localhost:4000/rust/programming/2022/01/03/rusty-tip-a-string-manages-its-own-memory-but-a-string-slice-does-not</id><content type="html" xml:base="http://localhost:4000/rust/programming/2022/01/03/rusty-tip-a-string-manages-its-own-memory-but-a-string-slice-does-not.html">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Key Point:&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;The difference between a &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; type and a &lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt; type can be confusing; you should call a &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; a &lt;em&gt;string&lt;/em&gt;, and a &lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt; a &lt;em&gt;string slice&lt;/em&gt;. Remember that you can modify a &lt;em&gt;string&lt;/em&gt;, but you cannot modify a &lt;em&gt;string slice&lt;/em&gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;In the Rust programming language, a &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; is a data structure
+(a struct) that manages its own memory. In fact, a &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; is
+really just some convenience functions that operate on a
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Vec&amp;lt;u8&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suppose I create a new &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buffer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The memory for the &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; (which is
+&lt;a href=&quot;https://doc.rust-lang.org/src/alloc/string.rs.html&quot;&gt;actually a &lt;code class=&quot;highlighter-rouge&quot;&gt;Vec&amp;lt;u8&amp;gt;&lt;/code&gt;&lt;/a&gt;) is
+valid for the scope in which it is created. As soon as we leave
+this scope, then the memory goes away. This lets us modify the &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt;
+in place, with code like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;c&quot;&gt;// Reset the String to be empty, or blank&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;buffer&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;// Append some text to the end of the String&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;buffer&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.push_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Two dozen lemurs sat on a fence.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;// Print the String (display it to the console or standard output)&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;What we cannot do, however, is return a new &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; from a function.
+This is because as soon as our local scope goes away, the &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; will
+loose access to its allocated memory. (The lifetime of the memory expires.)&lt;/p&gt;
+
+&lt;p&gt;Some useful methods to know for the &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; type are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://doc.rust-lang.org/std/string/struct.String.html#method.new&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;String::new()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://doc.rust-lang.org/std/string/struct.String.html#method.with_capacity&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;String::with_capacity(size)&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://doc.rust-lang.org/std/string/struct.String.html#method.clear&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;String::clear()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://doc.rust-lang.org/std/string/struct.String.html#method.push_str&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;String::push_str(str)&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://doc.rust-lang.org/std/string/struct.String.html#method.len&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;String::len()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://doc.rust-lang.org/std/string/struct.String.html#method.from&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;String::from(str)&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://doc.rust-lang.org/std/string/struct.String.html&quot;&gt;Documentation for the String type&lt;/a&gt;
+can be found in the
+&lt;a href=&quot;https://doc.rust-lang.org/std/index.html&quot;&gt;Rust Standard Library documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Be careful not to confuse the &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; type with the
+&lt;a href=&quot;https://doc.rust-lang.org/std/primitive.str.html&quot;&gt;primitive type called &lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;&lt;/a&gt;,
+or a &lt;em&gt;string slice&lt;/em&gt;.
+A &lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt; is zero or more contiguous UTF-8 characters.&lt;/p&gt;
+
+&lt;p&gt;The difference between a &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; type and a &lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt; type can be confusing;
+you should call a &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; a &lt;em&gt;string&lt;/em&gt;, and a &lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt; a &lt;em&gt;string slice&lt;/em&gt;.
+Remember that you can modify a &lt;em&gt;string&lt;/em&gt;, but you cannot modify a &lt;em&gt;string slice&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the code below, the characters in the &lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt; (&lt;em&gt;string slice&lt;/em&gt;) are in the source code, and so get
+compiled into the binary.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;c&quot;&gt;// A string slice is immutable.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;// A string slice cannot be modified after it is created.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Many good characters.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In this example, &lt;code class=&quot;highlighter-rouge&quot;&gt;my_str&lt;/code&gt; is a &lt;em&gt;string slice&lt;/em&gt; that points somewhere in
+memory, and you cannot modify it. A &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; can be changed (if it stays in scope),
+but a &lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt; (&lt;em&gt;string slice&lt;/em&gt;) is immutable and cannot be changed.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;You can experiment with Rust at the &lt;a href=&quot;https://play.rust-lang.org/&quot;&gt;Rust playground&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="rust" /><category term="programming" /><summary type="html">Key Point: The difference between a String type and a str type can be confusing; you should call a String a string, and a str a string slice. Remember that you can modify a string, but you cannot modify a string slice.</summary></entry><entry><title type="html">Cybersecurity: Who is roaming the halls?</title><link href="http://localhost:4000/cybersecurity/networks/2021/01/08/cybersecurity-who-is-roaming-the-halls.html" rel="alternate" type="text/html" title="Cybersecurity: Who is roaming the halls?" /><published>2021-01-08T06:00:00-05:00</published><updated>2021-01-08T06:00:00-05:00</updated><id>http://localhost:4000/cybersecurity/networks/2021/01/08/cybersecurity-who-is-roaming-the-halls</id><content type="html" xml:base="http://localhost:4000/cybersecurity/networks/2021/01/08/cybersecurity-who-is-roaming-the-halls.html">&lt;p&gt;This brief article describes how to use tcpdump to collect data for analyzing communication patterns in a computer network. Analyzing communication patterns will give you insight into how the network is being used.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -52,7 +128,7 @@ f8:47:2a:ad:08:19,ff:ff:ff:ff:ff:ff
 
 &lt;p&gt;&lt;strong&gt;References&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a name=&quot;1&quot;&gt;[1]&lt;/a&gt; &lt;a href=&quot;https://www.tcpdump.org&quot;&gt;TCPDUMP/LIBPCAP public repository&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="cybersecurity" /><category term="networks" /><summary type="html">This brief article describes how to use tcpdump to collect data for analyzing communication patterns in a computer network. Analyzing communication patterns will give you insight into how the network is being used.</summary></entry><entry><title type="html">It takes 3,375 bytes to kill over 50 million people.</title><link href="/genetics/artificial_life/malware/2020/10/07/3375-bytes-to-kill.html" rel="alternate" type="text/html" title="It takes 3,375 bytes to kill over 50 million people." /><published>2020-10-07T07:00:00-04:00</published><updated>2020-10-07T07:00:00-04:00</updated><id>/genetics/artificial_life/malware/2020/10/07/3375-bytes-to-kill</id><content type="html" xml:base="/genetics/artificial_life/malware/2020/10/07/3375-bytes-to-kill.html">&lt;p&gt;Today’s post is a reprint of a post I made on September 16, 2018, just over a year before SARS-CoV-19 (and the COVID-19 pandemic) engulfed the world. I think it is important that we occassionally reflect of the fragility of the systems around us.&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;1&quot;&gt;[1]&lt;/a&gt; &lt;a href=&quot;https://www.tcpdump.org&quot;&gt;TCPDUMP/LIBPCAP public repository&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="cybersecurity" /><category term="networks" /><summary type="html">This brief article describes how to use tcpdump to collect data for analyzing communication patterns in a computer network. Analyzing communication patterns will give you insight into how the network is being used.</summary></entry><entry><title type="html">It takes 3,375 bytes to kill over 50 million people.</title><link href="http://localhost:4000/genetics/artificial_life/malware/2020/10/07/3375-bytes-to-kill.html" rel="alternate" type="text/html" title="It takes 3,375 bytes to kill over 50 million people." /><published>2020-10-07T07:00:00-04:00</published><updated>2020-10-07T07:00:00-04:00</updated><id>http://localhost:4000/genetics/artificial_life/malware/2020/10/07/3375-bytes-to-kill</id><content type="html" xml:base="http://localhost:4000/genetics/artificial_life/malware/2020/10/07/3375-bytes-to-kill.html">&lt;p&gt;Today’s post is a reprint of a post I made on September 16, 2018, just over a year before SARS-CoV-19 (and the COVID-19 pandemic) engulfed the world. I think it is important that we occassionally reflect of the fragility of the systems around us.&lt;/p&gt;
 
 &lt;hr /&gt;
 

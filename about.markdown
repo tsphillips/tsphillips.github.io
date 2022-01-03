@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Hi! This is a personal site for Thomas Phillips.
+Hi! This is a personal site for Thomas S. Phillips.
 
 I am a computer scientist and polymath, who, like many of my ilk, have numerous interests spanning both the creative and the technical.
 By creative, I mean implicated in the creation of novel works, some aesthetic and some not.
@@ -32,12 +32,13 @@ I currently work as the Chief Technical Officer at <a href="http://www.ridgeback
 
 ## Presentations
 
-- Phillips, Thomas. (June 2021). Threat detection in graphs: Using quantum computing to calculate vertex covers, Second Cyber Bytes Foundation Executive Briefing.
-- Phillips, Thomas. (April 2018). Machine Learning: Too smart for its own good [presentation], BSidesSF 2018. https://www.youtube.com/watch?v=Y3aG3XUH5OA
-- Phillips, Thomas. (May 2016). Network situational awareness with tcpdump [presentation], MiniCon at Unallocated Space.
-- Phillips, Thomas. (April 2016). The value of deceiving attackers [presentation], BSidesCharm 2016. https://www.youtube.com/watch?v=rNdPI9TU6wA
+- Phillips, Thomas. (September 2021). Crossing into quantum: A practical approach to adopting quantum computing computing for cybersecurity. ATARC Presents.
+- Phillips, Thomas. (June 2021). Threat detection in graphs: Using quantum computing to calculate vertex covers. Second Cyber Bytes Foundation Executive Briefing.
+- Phillips, Thomas. (April 2018). Machine Learning: Too smart for its own good [presentation]. BSidesSF 2018. [https://www.youtube.com/watch?v=Y3aG3XUH5OA](https://www.youtube.com/watch?v=Y3aG3XUH5OA)
+- Phillips, Thomas. (May 2016). Network situational awareness with tcpdump [presentation]. MiniCon at Unallocated Space.
+- Phillips, Thomas. (April 2016). The value of deceiving attackers [presentation]. BSidesCharm 2016.
 - Phillips, Thomas. (May 2016). Network situational awareness with tcpdump [presentation]. MiniCon at Unallocated Space, Severn, MD.
-- Phillips, Thomas. (January 2016). Introduction to deception technology [seminar], Ridgeback Network Defense, Inc.
+- Phillips, Thomas. (January 2016). Introduction to deception technology [seminar]. Ridgeback Network Defense, Inc.
 
 ## Bibliography
 
@@ -63,15 +64,15 @@ I currently work as the Chief Technical Officer at <a href="http://www.ridgeback
 - Phillips, Thomas, Phillips, Rhianwen. (2018). Happy Horses Word Maze Puzzles: Gallop Your Way Through 102 Puzzles. Independently published.
 - Phillips, Thomas. (2018). Christmas Carols Word Maze Puzzles: Get into the Singing Spirit with Word Maze Puzzles. Independently published.
 - Phillips, Thomas. (2018). Have a Funny Punny Christmas Word Maze Puzzles: Seriously Funny A-Mazing Holiday Jokes. Independently published. 
-- Phillips, Thomas. (October 2018). D-Wave Tutorials (various tutorials for programming the D-Wave Systems quantum computer). https://github.com/ridgebacknet/dwave-tutorials
+- Phillips, Thomas. (October 2018). D-Wave Tutorials (various tutorials for programming the D-Wave Systems quantum computer). [https://github.com/ridgebacknet/dwave-tutorials](https://github.com/ridgebacknet/dwave-tutorials)
 - Phillips, Thomas. (April 1994). Approximate string matching, The C Users Journal, CMP Media LLC.
 - Gertler, Janos, Bennani, Ahmed, Phillips, Tom. (1989). A parallel implementation of model based on-line failure detection and isolation, Proceedings of the 1989 American Control Conference.
 - Phillips, Tom, Michael, J., Abuhamdeh, Zahi. (1988). Microcode generation for the control of a massively parallel computer, Proceedings of the 2nd Symposium on the Frontiers of Massively Parallel Computation, IEEE Computer Society Press.
 
-## Patents (pending)
+## Patents
 
-- Phillips, Thomas. Network anti-tampering system. U.S. Patent Application No. US16/212,270, Publication No. US20190312836A1 (filed Dec. 6, 2018; published Oct. 10, 2019) (Thomas Phillips, applicant).
-- Phillips, Thomas. Tagging network data. U.S. Patent Application No. US16/212,152, Publication No. US20190182292A1 (filed Dec. 6, 2018; published Jun. 13, 2019) (Thomas Phillips, applicant).
+- Phillips, Thomas. Network anti-tampering system. U.S. Patent Application No. US16/212,270, Publication No. US20190312836A1 (filed Dec. 6, 2018; published Oct. 10, 2019) (Thomas Phillips, applicant). ([https://patents.google.com/patent/US20190312836A1](https://patents.google.com/patent/US20190312836A1))
+- Phillips, Thomas S., "Tagging network data," U.S. Patent 10,992,707, Apr 17, 2021. ([https://patents.google.com/patent/US10992707B2](https://patents.google.com/patent/US10992707B2))
 
 ## Executive Producer for Released Products (Games)
 
@@ -125,6 +126,3 @@ I currently work as the Chief Technical Officer at <a href="http://www.ridgeback
 - Mystic Conquest (unreleased multiplayer web-based game)
 - The Martian String (role-playing game)
 
-## Et cetera
-
-$$ e^{i\pi}+1=0 $$

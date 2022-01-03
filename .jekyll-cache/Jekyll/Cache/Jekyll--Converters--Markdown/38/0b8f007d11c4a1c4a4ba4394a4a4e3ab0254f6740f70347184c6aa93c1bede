@@ -1,0 +1,43 @@
+I"i
+<p>In the Rust programming language, a String is a data structure
+(a struct) that manages its own memory. In fact, a String is
+really just some convenience functions that operate on a
+<code class="highlighter-rouge">Vec&lt;u8&gt;</code>.</p>
+
+<p>Suppose I create a new String:</p>
+
+<figure class="highlight"><pre><code class="language-rust" data-lang="rust"><span class="k">let</span> <span class="k">mut</span> <span class="n">buffer</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">new</span><span class="p">();</span></code></pre></figure>
+
+<p>The memory backing the String (which is <a href="https://doc.rust-lang.org/src/alloc/string.rs.html">actually a <code class="highlighter-rouge">Vec&lt;u8&gt;</code></a>) is
+valid for the scope in which it is created. As soon as we leave
+this scope, then the memory goes away. This lets us modify the String
+in place, with code like this:</p>
+
+<figure class="highlight"><pre><code class="language-rust" data-lang="rust"><span class="c">// Reset the String to be empty, or blank</span>
+<span class="n">buffer</span><span class="nf">.clear</span><span class="p">();</span>
+<span class="c">// Append some text to the end of the String</span>
+<span class="n">buffer</span><span class="nf">.push_str</span><span class="p">(</span><span class="s">"Two dozen lemurs sat on a fence."</span><span class="p">);</span>
+<span class="c">// Print the String (display it to the console or standard output)</span>
+<span class="nd">println!</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span></code></pre></figure>
+
+<p>What we cannot do, however, is return a String from a function.
+This is because as soon as our local scope goes away, the String will
+loose access to its allocated memory.</p>
+
+<p>Some useful functions to know for the String struct are:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">String::new()</code></li>
+  <li><code class="highlighter-rouge">String::with_capacity(size)</code></li>
+  <li><code class="highlighter-rouge">String::clear()</code></li>
+  <li><code class="highlighter-rouge">String::push_str(str)</code></li>
+  <li><code class="highlighter-rouge">String::len()</code></li>
+  <li><code class="highlighter-rouge">String::from(str)</code></li>
+</ul>
+
+<p><a href="https://doc.rust-lang.org/std/string/">Documentation for the String struct</a> can be found in the
+<a href="https://doc.rust-lang.org/std/index.html">Rust Standard Library documentation</a>.</p>
+
+<p>Be careful not to confuse the String struct with the
+<a href="https://doc.rust-lang.org/std/primitive.str.html">primitive data type called str</a>.</p>
+:ET
