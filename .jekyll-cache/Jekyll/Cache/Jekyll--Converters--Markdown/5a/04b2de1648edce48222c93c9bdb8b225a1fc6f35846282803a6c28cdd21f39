@@ -1,5 +1,0 @@
-I"ò<p>In the Rust programming language, a String is a data structure
-(a struct) that manages its own memory. In fact, a String is
-really just some convenience functions that operate on a
-<code class="highlighter-rouge">Vec&lt;u8&gt;</code>.</p>
-:ET

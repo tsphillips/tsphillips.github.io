@@ -34,10 +34,6 @@ buffer.push_str("Two dozen lemurs sat on a fence.");
 println!(buffer);
 {% endhighlight %}
 
-What we cannot do, however, is return a new `String` from a function.
-This is because as soon as our local scope goes away, the `String` will
-loose access to its allocated memory. (The lifetime of the memory expires.)
-
 Some useful methods to know for the `String` type are:
 
 - [`String::new()`](https://doc.rust-lang.org/std/string/struct.String.html#method.new)

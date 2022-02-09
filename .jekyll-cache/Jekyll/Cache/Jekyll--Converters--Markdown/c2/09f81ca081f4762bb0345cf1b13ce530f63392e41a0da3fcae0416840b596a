@@ -1,5 +1,0 @@
-I"¦<p>| Key Point:
-The difference between a <code class="highlighter-rouge">String</code> type and a <code class="highlighter-rouge">str</code> type can be confusing;
-you should call a <code class="highlighter-rouge">String</code> a <em>string</em>, and a <code class="highlighter-rouge">str</code> a <em>string slice</em>.
-Remember that you can modify a <em>string</em>, but you cannot modify a <em>string slice</em>. |</p>
-:ET

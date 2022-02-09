@@ -9,17 +9,17 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Key Point: The difference between a String type and a str type can be confusing; you should call a String a string, and a str a string slice. Remember that you can modify a string, but you cannot modify a string slice." />
 <meta property="og:description" content="Key Point: The difference between a String type and a str type can be confusing; you should call a String a string, and a str a string slice. Remember that you can modify a string, but you cannot modify a string slice." />
-<link rel="canonical" href="http://localhost:4000/rust/programming/2022/01/03/rusty-tip-a-string-manages-its-own-memory-but-a-string-slice-does-not.html" />
-<meta property="og:url" content="http://localhost:4000/rust/programming/2022/01/03/rusty-tip-a-string-manages-its-own-memory-but-a-string-slice-does-not.html" />
+<link rel="canonical" href="/rust/programming/2022/01/03/rusty-tip-a-string-manages-its-own-memory-but-a-string-slice-does-not.html" />
+<meta property="og:url" content="/rust/programming/2022/01/03/rusty-tip-a-string-manages-its-own-memory-but-a-string-slice-does-not.html" />
 <meta property="og:site_name" content="If you’re not doing it now, you’re not doing it." />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-01-03T12:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Rusty Tip: A String manages its own memory, but a string slice does not." />
 <script type="application/ld+json">
-{"description":"Key Point: The difference between a String type and a str type can be confusing; you should call a String a string, and a str a string slice. Remember that you can modify a string, but you cannot modify a string slice.","@type":"BlogPosting","url":"http://localhost:4000/rust/programming/2022/01/03/rusty-tip-a-string-manages-its-own-memory-but-a-string-slice-does-not.html","headline":"Rusty Tip: A String manages its own memory, but a string slice does not.","dateModified":"2022-01-03T12:00:00-05:00","datePublished":"2022-01-03T12:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/rust/programming/2022/01/03/rusty-tip-a-string-manages-its-own-memory-but-a-string-slice-does-not.html"},"@context":"https://schema.org"}</script>
+{"description":"Key Point: The difference between a String type and a str type can be confusing; you should call a String a string, and a str a string slice. Remember that you can modify a string, but you cannot modify a string slice.","@type":"BlogPosting","url":"/rust/programming/2022/01/03/rusty-tip-a-string-manages-its-own-memory-but-a-string-slice-does-not.html","headline":"Rusty Tip: A String manages its own memory, but a string slice does not.","dateModified":"2022-01-03T12:00:00-05:00","datePublished":"2022-01-03T12:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"/rust/programming/2022/01/03/rusty-tip-a-string-manages-its-own-memory-but-a-string-slice-does-not.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="If you're not doing it now, you're not doing it." /></head>
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="If you're not doing it now, you're not doing it." /></head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/">If you&#39;re not doing it now, you&#39;re not doing it.</a><nav class="site-nav">
@@ -81,10 +81,6 @@ in place, with code like this:</p>
 <span class="n">buffer</span><span class="nf">.push_str</span><span class="p">(</span><span class="s">"Two dozen lemurs sat on a fence."</span><span class="p">);</span>
 <span class="c">// Print the String (display it to the console or standard output)</span>
 <span class="nd">println!</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span></code></pre></figure>
-
-<p>What we cannot do, however, is return a new <code class="highlighter-rouge">String</code> from a function.
-This is because as soon as our local scope goes away, the <code class="highlighter-rouge">String</code> will
-loose access to its allocated memory. (The lifetime of the memory expires.)</p>
 
 <p>Some useful methods to know for the <code class="highlighter-rouge">String</code> type are:</p>
 
