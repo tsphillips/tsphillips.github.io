@@ -21,7 +21,7 @@ My professional work experience includes:
 
 - Founder/cofounder of four startups
 - Over 20 years experience with the U.S. Department of Defense and intelligence community
-- Technical management for multi-million dollar programs for the Department of Defense, including an <a href="https://aida.mitre.org/acat/">ACAT IA</a> program
+- Technical management for multi-million dollar programs for the Department of Defense, including an <a href="https://aida.mitre.org/acat/">ACAT I</a> program
 - Executive producer for over 25 education and entertainment products
 - Served in the U.S. Marines as a Russian linguist, and in the U.S. Army National Guard repairing communications equipment
 - Decades of experience in computer programming and system/network administration
